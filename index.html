@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie and Meal Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Calorie and Meal Planner</h1>
+
+    <!-- Logo section -->
+    <div class="logo-container">
+        <img src="https://bells.sg/wp-content/uploads/2023/07/bells_header_logo_ls.jpg" alt="Logo" class="logo">
+    </div>
+
+    <!-- User input section -->
+    <div>
+        <h2>Enter Your Details</h2>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" required>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" required>
+
+        <label for="age">Age (years):</label>
+        <input type="number" id="age" required>
+
+        <fieldset>
+            <legend>Gender:</legend>
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female" required> Female</label>
+        </fieldset>
+        
+        <button class="big-button" onclick="calculateCalories()">Calculate Daily Calories</button>
+        <div class="result" id="calorieResult"></div>
+    </div>
+
+    <!-- Daily intake comparison section -->
+    <div>
+        <h2>Set Daily Caloric Intake</h2>
+        <label for="dailyCalorieIntake">Desired Daily Calorie Intake:</label>
+        <input type="number" id="dailyCalorieIntake" required>
+
+        <button class="big-button" onclick="compareCalories()">Compare Caloric Needs</button>
+        <div class="result" id="calorieComparison"></div>
+    </div>
+
+    <!-- Weight loss calculation section -->
+    <div>
+        <h2>Weight Loss Goal</h2>
+        <label for="goalWeight">Target Weight Loss (kg):</label>
+        <input type="number" id="goalWeight" required>
+
+        <button class="big-button" onclick="saveWeightLossGoal()">Save Goal</button>
+        <div class="result" id="weightLossGoalList"></div>
+    </div>
+
+    <!-- Meal suggestion section -->
+    <div>
+        <h2>Meal Suggestions</h2>
+        <label for="numMeals">Number of Meals per Day:</label>
+        <select id="numMeals">
+            <option value="1">1 Meal</option>
+            <option value="2">2 Meals</option>
+            <option value="3">3 Meals</option>
+            <option value="4">4 Meals</option>
+            <option value="5">5 Meals</option>
+            <option value="6">6 Meals</option>
+        </select>
+
+        <button class="big-button" onclick="fetchMealSuggestions()">Get Meal Suggestions</button>
+        <div class="result" id="mealSuggestions"></div>
+    </div>
+
+    <!-- Final summary section -->
+    <div>
+        <button class="big-button" onclick="generateFinalSummary()">Generate Final Summary</button>
+        <div class="result" id="finalSummary"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
